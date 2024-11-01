@@ -4,11 +4,12 @@ from diffusers import FluxPipeline
 base_model_id = "Freepik/flux.1-lite-8B-alpha"
 torch_dtype = torch.bfloat16
 device = "cuda"
+cache_dir = "fine_tuned_models/text-to-image/Freepik_flux.1-lite-8B-alpha/base_model"
 
 # Load the pipe
 model_id = "Freepik/flux.1-lite-8B-alpha"
 pipe = FluxPipeline.from_pretrained(
-    model_id, torch_dtype=torch_dtype
+    model_id, torch_dtype=torch_dtype,cache_dir=cache_dir
 ).to(device)
 
 # Inference
